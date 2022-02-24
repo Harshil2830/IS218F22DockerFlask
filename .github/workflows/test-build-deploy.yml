@@ -3,12 +3,12 @@ name: Run Tests and Push Image to DockerHub
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
     tags:
       - 'v*'
   pull_request:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   runtest:
@@ -57,7 +57,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "kwilliam-flask" #Must be unique in Heroku
-          heroku_email: "keith@webizly.com"
+          heroku_api_key: ${{secrets.HEROKU_API}}
+          heroku_app_name: "hss56-flask-app" #Must be unique in Heroku
+          heroku_email: "hss56@njit.edu"
           usedocker: true
