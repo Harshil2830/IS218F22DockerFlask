@@ -57,7 +57,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_api_key: ${{secrets.HEROKU_API}}
           heroku_app_name: "hss56-flask-app" #Must be unique in Heroku
           heroku_email: "hss56@njit.edu"
           usedocker: true
