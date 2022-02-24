@@ -3,11 +3,13 @@ name: Run Tests and Push Image to DockerHub
 on:
   push:
     branches:
+      - 'master'
       - 'main'
     tags:
       - 'v*'
   pull_request:
     branches:
+      - 'master'
       - 'main'
 
 jobs:
