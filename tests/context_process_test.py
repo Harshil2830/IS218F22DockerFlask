@@ -1,4 +1,5 @@
 import datetime
+
 from os import getenv
 
 def test_context_variables_environment(client):
