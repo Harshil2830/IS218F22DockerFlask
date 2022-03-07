@@ -1,4 +1,4 @@
-name: Run Tests and Push Image to DockerHub
+name: Production Workflow
 
 on:
   push:
@@ -7,10 +7,6 @@ on:
       - 'main'
     tags:
       - 'v*'
-  pull_request:
-    branches:
-      - 'master'
-      - 'main'
 
 jobs:
   runtest:
@@ -60,6 +56,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API}}
-          heroku_app_name: "hss56-flask-app" #Must be unique in Heroku
+          heroku_app_name: "project1-productions" #Must be unique in Heroku
           heroku_email: "hss56@njit.edu"
           usedocker: true
