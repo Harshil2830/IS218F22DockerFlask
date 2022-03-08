@@ -4,35 +4,49 @@ def test_request_main_menu_links(client):
     """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
-    assert b'<a class="nav-link" href="/about">About</a>' in response.data
-    assert b'<a class="nav-link" href="/page1">Page 1</a>' in response.data
-    assert b'<a class="nav-link" href="/page2">Page 2</a>' in response.data
-    assert b'<a class="nav-link" href="/page3">Page 3</a>' in response.data
-    assert b'<a class="nav-link" href="/page4">Page 4</a>' in response.data
+    #assert b'<a class="nav-link" href="/about">About</a>' in response.data
+    assert b'<a class="nav-link" href="/page1">Git</a>' in response.data
+    assert b'<a class="nav-link" href="/page2">Docker</a>' in response.data
+    assert b'<a class="nav-link" href="/page3">Flask</a>' in response.data
+    assert b'<a class="nav-link" href="/page4">CI/CD</a>' in response.data
 
 def test_request_index(client):
     """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
-    assert b"Index Page" in response.data
+    assert b"Hi! I'm Harshil" in response.data
+    assert b"I am a senior at NJIT graduating this semester majoring in IT specializing in Network and Information Security and minor in CS. GPA: 3.90" in response.data
+    assert b"I work part-time at a small computer store as a Junior IT Service Specialist. I have a great deal of experience with Full-Stack development." in response.data
+    assert b"Skills: <br> PHP, Python, JavaScript, HTML, CSS, Bootstrap, Java, Bash, C#, C++, SQL, MySQL, Data Structures and Algorithms, Object-Oriented Programming, Docker, Agile, Scrum, AWS, GIT, Linux" in response.data
+    assert b"My Technologies" in response.data
 
+"""
 def test_request_about(client):
-    """This makes the index page"""
+    This makes the index page
     response = client.get("/about")
     assert response.status_code == 200
     assert b"About Page" in response.data
-
+"""
 def test_request_page1(client):
     """This makes the index page"""
     response = client.get("/page1")
     assert response.status_code == 200
-    assert b"Page 1" in response.data
+    assert b"Git" in response.data
+    assert b"What are Branches?" in response.data
+    assert b"What is a Merge?" in response.data
+    assert b"What is a Commit?" in response.data
+    assert b"What are Tags?" in response.data
+    assert b"What are Repositories?" in response.data
 
 def test_request_page2(client):
     """This makes the index page"""
     response = client.get("/page2")
     assert response.status_code == 200
-    assert b"Page 2" in response.data
+    assert b"Docker" in response.data
+    assert b"What is a Docker Container and an Image?" in response.data
+    assert b"How to get started" in response.data
+    assert b"Some useful docker commands" in response.data
+    assert b"This is a link to the docker repository of this website." in response.data
 
 def test_request_page3(client):
     """This makes the index page"""
