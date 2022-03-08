@@ -1,13 +1,13 @@
 # Project Setup
 
-[![Production Workflow](https://github.com/kaw393939/docker_flask/actions/workflows/prod.yml/badge.svg)](https://github.com/kaw393939/docker_flask/actions/workflows/prod.yml)
+[![Production Workflow](https://github.com/Harshil2830/IS218F22DockerFlask/actions/workflows/prod.yml/badge.svg)](https://github.com/kaw393939/docker_flask/actions/workflows/prod.yml)
 
-* [Production Deployment](https://kwilliam-prod.herokuapp.com/)
+* [Production Deployment](https://project1-productions.herokuapp.com/)
 
 
-[![Development Workflow](https://github.com/kaw393939/docker_flask/actions/workflows/dev.yml/badge.svg)](https://github.com/kaw393939/docker_flask/actions/workflows/dev.yml)
+[![Development Workflow](https://github.com/Harshil2830/IS218F22DockerFlask/actions/workflows/dev.yml/badge.svg)](https://github.com/kaw393939/docker_flask/actions/workflows/dev.yml)
 
-* [Developmental Deployment](https://kwilliam-dev.herokuapp.com/)
+* [Developmental Deployment](https://project1-development.herokuapp.com/)
 
 ## Setting up CI/CD
 
@@ -51,3 +51,10 @@ app/dyno.
 * https://flask-user.readthedocs.io/en/latest/basic_app.html
 * https://hackersandslackers.com/flask-application-factory/
 * https://suryasankar.medium.com/a-basic-app-factory-pattern-for-production-ready-websites-using-flask-and-sqlalchemy-dbb891cdf69f
+
+
+https://stackoverflow.com/questions/60359615/how-to-create-a-dynamic-bootstrap-carousel-using-flask-python
+
+https://getbootstrap.com/docs/5.1/components/carousel/
+
+https://www.w3schools.com/bootstrap5/bootstrap_carousel.php
