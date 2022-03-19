@@ -1,14 +1,16 @@
 """This test the homepage"""
 
+
 def test_request_main_menu_links(client):
     """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
-    #assert b'<a class="nav-link" href="/about">About</a>' in response.data
+#   assert b'<a class="nav-link" href="/about">About</a>' in response.data
     assert b'<a class="nav-link text-white" href="/page1">Git</a>' in response.data
     assert b'<a class="nav-link text-primary" href="/page2">Docker</a>' in response.data
     assert b'<a class="nav-link text-muted" href="/page3">Flask</a>' in response.data
     assert b'<a class="nav-link text-warning" href="/page4">CI/CD</a>' in response.data
+
 
 def test_request_index(client):
     """This makes the index page"""
@@ -20,6 +22,7 @@ def test_request_index(client):
     assert b"Skills: <br> PHP, Python, JavaScript, HTML, CSS, Bootstrap, Java, Bash, C#, C++, SQL, MySQL, Data Structures and Algorithms, Object-Oriented Programming, Docker, Agile, Scrum, AWS, GIT, Linux" in response.data
     assert b"My Technologies" in response.data
 
+
 """
 def test_request_about(client):
     This makes the index page
@@ -27,6 +30,8 @@ def test_request_about(client):
     assert response.status_code == 200
     assert b"About Page" in response.data
 """
+
+
 def test_request_page1(client):
     """This makes the index page"""
     response = client.get("/page1")
@@ -38,6 +43,7 @@ def test_request_page1(client):
     assert b"What are Tags?" in response.data
     assert b"What are Repositories?" in response.data
 
+
 def test_request_page2(client):
     """This makes the index page"""
     response = client.get("/page2")
@@ -48,17 +54,20 @@ def test_request_page2(client):
     assert b"Some useful docker commands" in response.data
     assert b"This is a link to the docker repository of this website." in response.data
 
+
 def test_request_page3(client):
     """This makes the index page"""
     response = client.get("/page3")
     assert response.status_code == 200
     assert b"Page 3" in response.data
 
+
 def test_request_page4(client):
     """This makes the index page"""
     response = client.get("/page4")
     assert response.status_code == 200
     assert b"Page 4" in response.data
+
 
 def test_request_page_not_found(client):
     """This makes the index page"""
