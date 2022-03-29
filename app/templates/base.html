@@ -45,16 +45,16 @@
                                 <a class="nav-link text-warning" href="{{ url_for('simple_pages.show', page="page4")}}">CI/CD</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-warning" href="{{ url_for('simple_pages.show', page="Glossary")}}">Glossary</a>
+                                <a class="nav-link text-info" href="{{ url_for('simple_pages.show', page="Glossary")}}">Glossary</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-warning" href="{{ url_for('simple_pages.show', page="AAA")}}">AAA</a>
+                                <a class="nav-link text-success" href="{{ url_for('simple_pages.show', page="AAA")}}">AAA</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-warning" href="{{ url_for('simple_pages.show', page="OOPs")}}">OOPs</a>
+                                <a class="nav-link text-danger" href="{{ url_for('simple_pages.show', page="OOPs")}}">OOPs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-warning" href="{{ url_for('simple_pages.show', page="SOLID")}}">SOLID</a>
+                                <a class="nav-link text-light" href="{{ url_for('simple_pages.show', page="SOLID")}}">SOLID</a>
                             </li>
                         </ul>
                     </div>
@@ -62,7 +62,7 @@
             </nav>
         </header>
     </div>
-    <div class="container p-2 mt-5 bg-dark text-white">
+    <div class="container p-2 mt-5 mb-5 bg-dark text-white">
         {% block content %}
         {% endblock %}
     </div>
