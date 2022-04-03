@@ -11,7 +11,7 @@
     {% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 
-        <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+        <title>{% block title %}{% endblock %}This is Harshil's Website</title>
     {% endblock %}
 
 </head>
@@ -44,13 +44,25 @@
                             <li class="nav-item">
                                 <a class="nav-link text-warning" href="{{ url_for('simple_pages.show', page="page4")}}">CI/CD</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-info" href="{{ url_for('simple_pages.show', page="Glossary")}}">Glossary</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-success" href="{{ url_for('simple_pages.show', page="AAA")}}">AAA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="{{ url_for('simple_pages.show', page="OOPs")}}">OOPs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="{{ url_for('simple_pages.show', page="SOLID")}}">SOLID</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
     </div>
-    <div class="container p-2 mt-5 bg-dark text-white">
+    <div class="container p-2 mt-5 mb-5 bg-dark text-white">
         {% block content %}
         {% endblock %}
     </div>
