@@ -3,7 +3,6 @@ from calculator import Calculator
 from calculator.calculation import Addition, Subtraction, Multiplication
 
 
-
 def test_calculator_is_instance():
     """ Testing the Calculator Instance"""
     calculator = Calculator()
@@ -60,18 +59,6 @@ def test_calculator_result_property():
     calc2.result = 6
     assert calc1.result == 5
     assert calc2.result == 6
-
-
-def test_calculator_add_method():
-    """Testing the Calculator Addition"""
-    calculator = Calculator()
-    assert calculator.add((1, 2)) == 3
-
-
-def test_calculator_subtract_method():
-    """Testing the Calculator Subtract"""
-    calculator = Calculator()
-    assert calculator.subtract((1, 2)) == -3
 
 
 def test_calculator_multiply_method():
