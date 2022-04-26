@@ -6,7 +6,6 @@
 __pycache__
 .coverage
 .bash_history
-db
 .env
 logs
 uploads
