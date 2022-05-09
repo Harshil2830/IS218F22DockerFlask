@@ -16,6 +16,19 @@ def test_request_index(client):
     """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
+    assert b"Index" in response.data
+
+def test_request_about(client):
+    """This makes the index page"""
+    response = client.get("/about")
+    assert response.status_code == 200
+    assert b"About" in response.data
+
+def test_request_page1(client):
+    """This makes the index page"""
+    response = client.get("/welcome")
+    assert response.status_code == 200
+    assert b"welcome" in response.data
     assert b"Hi! I'm Harshil" in response.data
     assert b"I am a senior at NJIT graduating this semester majoring in IT specializing in Network and Information Security and minor in CS. GPA: 3.90" in response.data
     assert b"I work part-time at a small computer store as a Junior IT Service Specialist. I have a great deal of experience with Full-Stack development." in response.data

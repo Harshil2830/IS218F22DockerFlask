@@ -1,3 +1,4 @@
+
 from flask import Blueprint, render_template, redirect, url_for, flash, current_app
 from flask_login import login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash
@@ -99,7 +100,6 @@ def edit_account():
 
 
 # You should probably move these to a new Blueprint to clean this up.  These functions below are for user management
-
 
 @auth.route('/users')
 @login_required
