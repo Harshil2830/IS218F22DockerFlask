@@ -8,8 +8,6 @@ from flask_login import UserMixin
 from sqlalchemy_serializer import SerializerMixin
 
 
-
-
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -22,6 +20,7 @@ class User(UserMixin, db.Model):
     is_admin = db.Column('is_admin', db.Boolean(), nullable=False, server_default='0')
     # songs = db.relationship("Song", back_populates="user", cascade="all, delete")
     # locations = db.relationship("Location", back_populates="user", cascade="all, delete")
+
 
     # `roles` and `groups` are reserved words that *must* be defined
     # on the `User` model to use group- or role-based authorization.
@@ -51,3 +50,4 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.email
+

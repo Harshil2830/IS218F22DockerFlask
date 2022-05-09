@@ -25,4 +25,3 @@ def create_db_file_if_does_not_exist():
     if not os.path.exists(dbdir):
         os.mkdir(dbdir)
     db.create_all()
-
