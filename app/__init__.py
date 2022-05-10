@@ -15,7 +15,6 @@ from app.db import db
 from app.db.models import User
 from app.error_handlers import error_handlers
 from app.logging_config import log_con, LOGGING_CONFIG
-from app.logging_config.log_formatters import RequestFormatter
 from app.simple_pages import simple_pages
 # from app.songs import songs
 
