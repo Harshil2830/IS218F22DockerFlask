@@ -14,4 +14,4 @@ def test_create_database():
     # set the name of the apps log folder to logs
     dbdir = os.path.join(root, '../database')
     # make a directory if it doesn't exist
-    assert os.path.exists(dbdir) == True
+    assert os.path.exists(dbdir) is True
