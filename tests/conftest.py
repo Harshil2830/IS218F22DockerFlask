@@ -14,9 +14,9 @@ from app.db import db
 @pytest.fixture()
 def application():
     """This makes the app"""
-    # you need this one if you want to see whats in the database
+    # you need this one if you want to see what's in the database
     # os.environ['FLASK_ENV'] = 'development'
-    # you need to run it in testing to pass on github
+    # you need to run it in testing to pass on GitHub
     os.environ['FLASK_ENV'] = 'testing'
 
     application = create_app()
@@ -25,7 +25,7 @@ def application():
         db.create_all()
         yield application
         db.session.remove()
-        # drops the database tables after the test runs
+        # drops the database tables after the test runs'
         # db.drop_all()
 
 
