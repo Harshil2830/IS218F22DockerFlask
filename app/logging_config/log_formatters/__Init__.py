@@ -2,7 +2,7 @@ import logging
 from flask import has_request_context, request
 
 
-class RequestFormatter(logging.Formatter):
+class RequestFormatters(logging.Formatter):
     def format(self, record):
         if has_request_context():
             record.url = request.url
