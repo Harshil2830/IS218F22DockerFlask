@@ -41,3 +41,9 @@ def test_sqlalchemy_log_file_creation(client):
     logdir = config.Config.LOG_DIR
     logfile = os.path.join(logdir, './sqlalchemy.log')
     assert os.path.exists(logfile) is True
+
+
+def test_uploads_log_file_creation(client):
+    logdir = config.Config.LOG_DIR
+    logfile = os.path.join(logdir, './uploads.log')
+    assert os.path.exists(logfile) is True
