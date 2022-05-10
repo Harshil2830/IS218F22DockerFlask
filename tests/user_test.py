@@ -12,7 +12,7 @@ def test_adding_user(application):
         assert db.session.query(Song).count() == 0
         # showing how to add a record
         # create a record
-        user = User('keith@webizly.com', 'testtest')
+        user = User('keith@webizly.com', 'testtest', 0)
         # add it to get ready to be committed
         db.session.add(user)
         # call the commit
@@ -25,7 +25,7 @@ def test_adding_user(application):
         # asserting that the user retrieved is correct
         assert user.email == 'keith@webizly.com'
         # this is how you get a related record ready for insert
-        user.songs = [Song("test","smap"),Song("test2","te")]
+        user.songs = [Song("test", "smap", 2022, "Dance"), Song("test2", "te", 2020, "Rock")]
         # commit is what saves the songs
         db.session.commit()
         assert db.session.query(Song).count() == 2
