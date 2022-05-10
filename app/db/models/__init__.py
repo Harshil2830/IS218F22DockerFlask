@@ -8,17 +8,21 @@ from flask_login import UserMixin
 from sqlalchemy_serializer import SerializerMixin
 
 
-class Song(db.Model,SerializerMixin):
+class Song(db.Model, SerializerMixin):
     __tablename__ = 'songs'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(300), nullable=True, unique=False)
     artist = db.Column(db.String(300), nullable=True, unique=False)
+    year = db.Column(db.Integer(), nullable=True, unique=False)
+    genre = db.Column(db.String(300), nullable=True, unique=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     user = relationship("User", back_populates="songs", uselist=False)
 
-    def __init__(self, title, artist):
+    def __init__(self, title, artist, year, genre):
         self.title = title
         self.artist = artist
+        self.year = year
+        self.genre = genre
 
 
 class User(UserMixin, db.Model):
@@ -36,10 +40,11 @@ class User(UserMixin, db.Model):
     # `roles` and `groups` are reserved words that *must* be defined
     # on the `User` model to use group- or role-based authorization.
 
-    def __init__(self, email, password):
+    def __init__(self, email, password, is_admin):
         self.email = email
         self.password = password
         self.registered_on = datetime.utcnow()
+        self.is_admin = is_admin
 
     def is_authenticated(self):
         return True

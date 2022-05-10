@@ -15,7 +15,6 @@ log_con = flask.Blueprint('log_con', __name__)
 #def before_request_logging():
 
 
-
 @log_con.after_app_request
 def after_request_logging(response):
     if request.path == '/favicon.ico':
@@ -26,6 +25,7 @@ def after_request_logging(response):
         return response
     return response
 
+
 @log_con.before_app_first_request
 def setup_logs():
 
@@ -35,7 +35,6 @@ def setup_logs():
     if not os.path.exists(logdir):
         os.mkdir(logdir)
     logging.config.dictConfig(LOGGING_CONFIG)
-
 
 
 LOGGING_CONFIG = {
@@ -96,6 +95,13 @@ LOGGING_CONFIG = {
             'maxBytes': 10000000,
             'backupCount': 5,
         },
+        'file.handler.uploads': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'formatter': 'standard',
+            'filename': os.path.join(config.Config.LOG_DIR,'uploads.log'),
+            'maxBytes': 10000000,
+            'backupCount': 5,
+        }
     },
     'loggers': {
         '': {  # root logger
@@ -125,6 +131,11 @@ LOGGING_CONFIG = {
         },
         'myerrors': {  # if __name__ == '__main__'
             'handlers': ['file.handler.errors'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'uploads': {  # if __name__ == '__main__'
+            'handlers': ['file.handler.uploads'],
             'level': 'DEBUG',
             'propagate': False
         },
